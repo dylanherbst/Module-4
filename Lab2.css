@@ -1,0 +1,101 @@
+body {
+    font-family : Arial, Helvetica , sans-serif ;
+    background-color : #e3f2fd;
+    }
+
+        .card {
+        padding: 10px;
+        grid-row: 3;
+        grid-column: 3 ;
+        width: 18rem;
+        height: 15rem;
+        background-color:white;
+        margin: 10px;
+        margin-bottom: 20px;
+        overflow: auto;
+        overflow-x: auto; /* Horizontal scroll */
+        }
+        .card-title {
+        font-weight : 600;
+        font-size : 3em;
+        padding: 0 0 10px 0;
+        }
+        .card-description {
+        font-weight : 400;
+        font-size : 2em
+        }
+
+        .cardBorder{
+            padding: 10px;
+            border: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card-text {
+            max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+
+
+        }
+
+        #card-list {
+            display: flex;
+            flex-wrap: wrap; /* Allows items to wrap to the next line */
+            justify-content: space-around; /* Adjusts the space between the items */
+        }
+
+        
+    /* .card {
+    padding: 10px;
+    border: 20px;
+    margin: 10px;
+    }
+    .card-title {
+    font-weight : 600;
+    font-size : 3em;
+    padding: 0 0 10px 0;
+    }
+    .card-description {
+    font-weight : 400;
+    font-size : 2em
+    }
+
+    .card-template {
+        padding: 10px;
+        border: 20px;
+    }
+    
+
+
+
+
+
+    .genCard {
+        padding: 10px;
+        border: 20px;
+        background-color: antiquewhite;
+        width: 18rem;
+        
+
+    }
+    
+
+    .genCard .card-text {
+        width: 18rem;
+    }
+
+    .genCard .card-title {
+        width: 18rem;
+    }
+
+    .card-body{
+        padding: 10px;
+        border: 20px;
+    }
+
+    .cardBorder{
+        padding: 10px;
+        border: 20px;
+        margin-bottom: 30px
+    } */
