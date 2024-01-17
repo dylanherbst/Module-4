@@ -1,0 +1,88 @@
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+<title>Moment DateTime Format</title>
+<!-- reference Moment.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+<!-- Load Moment Timezone -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data-10-year-range.min.js"></script>
+
+</head>
+<body>
+<h2>Moment Date</h2>
+<div id="displayDaySince"></div>
+<h2>Days Since Bday</h2>
+<!-- container for Moment.js output -->
+<div id="displayMoment"></div>
+<h2>JavaScript Date</h2>
+<!-- container for JavaScript Date output -->
+<div id="displayJsDate"></div>
+
+<h2>London Time</h2>
+<div id="displayTime"></div>
+
+
+
+<script type="text/javascript">
+
+
+(function() {
+
+    
+// instantiate a moment object
+let bDay = moment("2000-05-21")
+
+
+function calcBday() {
+    let now = moment();
+    let daysSince = now.diff(bDay, 'days');
+    let weeksSince = Math.floor(daysSince / 7); // Using Math.floor to round down to the nearest whole number
+    let yearsSince = now.diff(bDay, 'years'); // Alternatively, use Math.floor(daysSince / 365)
+
+    return {
+        days: daysSince,
+        weeks: weeksSince,
+        years: yearsSince
+    };
+}
+
+let timeSince = calcBday();
+
+// instantiate a JavaScript Date object
+let NowDate = new Date();
+
+// display value of moment object in #displayMoment div
+let eDisplayMoment = document.getElementById('displayMoment');
+eDisplayMoment.innerHTML = `Days since birthday: ${timeSince.days}<br>Weeks since birthday: ${timeSince.weeks}<br>Years since birthday: ${timeSince.years}`;
+
+
+
+// display value of Date object in #displayJsDate div
+let eDisplayDate = document.getElementById('displayJsDate');
+eDisplayDate.innerHTML = NowDate;
+})();
+
+
+
+function displayLondonTime() {
+    // Get current time in London
+    let londonTime = moment.tz("Europe/London");
+
+    // Format the time as desired, e.g., 'YYYY-MM-DD HH:mm:ss'
+    let formattedTime = londonTime.format('YYYY-MM-DD HH:mm:ss');
+
+    // Display the time
+    let displayElement = document.getElementById('displayTime');
+    displayElement.innerHTML = `Current time in London: ${formattedTime}`;
+}
+
+// Call the function
+displayLondonTime();
+
+</script> 
+
+
+</body>
+</html>

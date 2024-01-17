@@ -1,0 +1,39 @@
+body {
+    height: 500px;
+}
+
+div {
+    height: 800px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+
+}
+
+.space {
+    height: 800px;
+    width: 200px;
+}
+
+h1 {
+ 
+    background-color: blue;
+    width: 130px;
+    height: 130px;
+    align-self: center;
+    position: absolute;
+    top: 0;
+margin-left: 200px;
+    background-color: blue;
+    animation: moveDown 5s infinite;
+}
+
+@keyframes moveDown {
+    from {
+        top: 0;
+    }
+    to {
+        top: 100%;
+        transform: translateY(-100%); 
+    }
+}
